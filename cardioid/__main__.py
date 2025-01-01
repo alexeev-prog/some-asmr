@@ -23,9 +23,9 @@ class Cardioid:
 
 	def draw(self):
 		time = pg.time.get_ticks()
-		self.radius = 175 + 25 * abs(math.sin(time * 0.002) - 0.25)
-		# factor = 1 + 0.0001 * time
-		factor = 2
+		# self.radius = 175 + 25 * abs(math.sin(time * 0.002) - 0.25)
+		factor = 1 + 0.0001 * time
+		# factor = 2
 
 		for i in range(self.num_lines):
 			theta = (2 * math.pi / self.num_lines) * i
@@ -47,12 +47,12 @@ class App:
 		self.FPS = 60
 		self.cardioid = Cardioid(self)
 
-		self.font = pg.font.Font("mono.otf", 24)
+		self.font = pg.font.Font("serif.ttf", 24)
 
 		self.recorder = ScreenRecorder(450, 750, 60)
 
-	def print(self, text, position, rgb_channel=(255,255,255), font_size=32):
-		self.font = pg.font.Font("terminess.ttf", font_size)
+	def print(self, text, position, rgb_channel=(255,255,255), font_size=28):
+		self.font = pg.font.Font("serif.ttf", font_size)
 
 		text_surface = self.font.render(text, True, rgb_channel)
 		self.screen.blit(text_surface, position)
@@ -62,8 +62,7 @@ class App:
 
 		self.cardioid.draw()
 
-		self.print("Heart Cardioid", (120, 30), rgb_channel=(255, 100, 100))
-		self.print("Subscribe to channel", (110, 80), font_size=26)
+		# self.print("math.asmr314", (10, 10), rgb_channel=(255, 255, 255))
 
 		pg.display.flip()
 		pg.display.update()
