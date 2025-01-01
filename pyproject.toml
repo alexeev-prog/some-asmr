@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "someniceasmr"
+version = "0.1.0"
+description = ""
+authors = ["alexeev-prog <alexeev.dev@mail.ru>"]
+license = "MIT License"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.10,<4.0"
+pygame = "^2.6.1"
+pygame-screen-record = "^0.1.1"
+opencv-python = "^4.10.0.84"
+numpy = "^2.2.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
